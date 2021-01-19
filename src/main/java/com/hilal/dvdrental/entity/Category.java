@@ -29,7 +29,7 @@ public class Category {
 	@ManyToMany(fetch=FetchType.LAZY, cascade={CascadeType.PERSIST, CascadeType.MERGE,
 			 CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinTable(
-			name="film_actor",
+			name="film_category",
 			joinColumns=@JoinColumn(name="category_id"),
 			inverseJoinColumns=@JoinColumn(name="film_id"))
 	private List<Film> films;
