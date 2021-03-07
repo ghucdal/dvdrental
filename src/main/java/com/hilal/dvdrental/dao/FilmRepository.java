@@ -12,4 +12,10 @@ public interface FilmRepository extends JpaRepository<Film, Integer>{
 	//get films by category id
 	Page<Film> findByCategories_Id(@RequestParam("id") Integer id, Pageable pageable);
 	
+	//get films by actor id
+	Page<Film> findByActors_Id(@RequestParam("id") Integer id, Pageable pageable);
+	
+	//search for films by keyword
+	//select * from Film f where f.title like concat('%', :title, '%')
+	Page<Film> findByTitleContainingIgnoreCase(@RequestParam("title") String title, Pageable pageable);
 }

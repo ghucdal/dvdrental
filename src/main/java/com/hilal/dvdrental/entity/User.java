@@ -11,17 +11,26 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="language")
+@Table(name="user", schema = "public")
 @Getter
 @Setter
-public class Language {
-	
+public class User {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="language_id")
+	@Column(name="user_id")
 	private int id;
 	
-	@Column(name="name")
-	private String name;
+	@Column(name="username")
+	private String username;
+	
+	@Column(name="password")
+	private String password;
+	
+	@Column(name="active")
+	private boolean active;
+	
+	@Column(name="roles")
+	private String roles;
 	
 }

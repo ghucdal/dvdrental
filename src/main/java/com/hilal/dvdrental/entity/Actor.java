@@ -14,8 +14,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name="actor")
+@Getter
+@Setter
 public class Actor {
 	
 	@Id
@@ -36,43 +41,5 @@ public class Actor {
 			joinColumns=@JoinColumn(name="actor_id"),
 			inverseJoinColumns=@JoinColumn(name="film_id"))
 	private List<Film> films;
-	
-	public Actor() {
-		
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public List<Film> getFilms() {
-		return films;
-	}
-
-	public void setFilms(List<Film> films) {
-		this.films = films;
-	}
-	
-	
 	
 }

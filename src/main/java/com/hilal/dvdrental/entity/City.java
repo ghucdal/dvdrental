@@ -10,8 +10,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name="city")
+@Getter
+@Setter
 public class City {
 	
 	@Id
@@ -26,33 +31,5 @@ public class City {
 			 CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinColumn(name="country_id")
 	private Country country;
-	
-	public City() {
 		
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public Country getCountry() {
-		return country;
-	}
-
-	public void setCountry(Country country) {
-		this.country = country;
-	}
-	
 }
